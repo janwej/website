@@ -1,6 +1,11 @@
-from flask import Flask, render_template_string
+import streamlit as st
+from streamlit.components.v1 import html
 
-app = Flask(__name__)
+st.set_page_config(
+    page_title="My CV - Interactive Portfolio",
+    page_icon="🧑‍💻",
+    layout="wide",
+)
 
 HTML_TEMPLATE = '''
 <!DOCTYPE html>
@@ -338,9 +343,5 @@ HTML_TEMPLATE = '''
 </html>
 '''
 
-@app.route('/')
-def home():
-    return render_template_string(HTML_TEMPLATE)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# Render the HTML inside Streamlit
+html(HTML_TEMPLATE, height=2200, scrolling=True)
