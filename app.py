@@ -7,22 +7,24 @@ st.set_page_config(
     layout="wide",
 )
 
-# Remove Streamlit's default padding / white frame
+# Remove Streamlit padding / white background
 st.markdown(
     """
     <style>
-    .main .block-container {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-        padding-left: 0rem;
-        padding-right: 0rem;
-        max-width: 100%;
+    .block-container {
+        padding-top: 0rem !important;
+        padding-bottom: 0rem !important;
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+        max-width: 100% !important;
     }
     [data-testid="stAppViewContainer"] {
-        padding: 0;
+        padding: 0 !important;
+        background: transparent !important;
     }
     body {
         margin: 0;
+        padding: 0;
     }
     </style>
     """,
@@ -44,6 +46,11 @@ HTML_TEMPLATE = '''
         }
         .animate-fade-in { animation: fadeIn 1s ease-out; }
         html { scroll-behavior: smooth; }
+        /* 🔥 This removes the white frame INSIDE the iframe */
+        body {
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
