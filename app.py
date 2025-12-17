@@ -373,4 +373,4 @@ HTML_TEMPLATE = '''
 '''
 
 # Render the HTML inside Streamlit
-html(HTML_TEMPLATE, height=2600, scrolling=True)
+html(HTML_TEMPLATE, height=2000, scrolling=True)
