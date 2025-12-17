@@ -48,18 +48,17 @@ HTML_TEMPLATE = '''
         .animate-fade-in { animation: fadeIn 1s ease-out; }
         html { scroll-behavior: smooth; }
 
-        /* Remove iframe margins + nudge content down a bit
-           so the navbar isn't cut by the Streamlit header */
+        /* iframe body – small top padding so navbar isn't cut off */
         body {
             margin: 0;
-            padding: 16px 0 0 0; /* top padding pushes everything slightly down */
+            padding: 32px 0 0 0; /* adjust this if you want it higher/lower */
         }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
     
     <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-16 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar" class="fixed top-12 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4">
             <div class="flex items-center justify-center gap-2 flex-wrap">
                 <button onclick="scrollToSection('about')" class="nav-btn px-6 py-3 rounded-full transition-all duration-300 bg-gradient-to-r from-purple-500 to-pink-500 text-white scale-110 shadow-lg shadow-purple-500/50">
@@ -100,7 +99,7 @@ HTML_TEMPLATE = '''
     </nav>
 
     <!-- Main Content -->
-    <div class="pt-32 pb-16 px-4">
+    <div class="pt-40 pb-16 px-4">
         <div class="max-w-6xl mx-auto space-y-32">
             
             <!-- About Me Section -->
@@ -136,7 +135,8 @@ HTML_TEMPLATE = '''
                             </div>
                             <div class="flex items-center gap-3 text-gray-300">
                                 <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.
+807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 <span>github.com/yourusername</span>
                             </div>
@@ -151,8 +151,160 @@ HTML_TEMPLATE = '''
                 </div>
             </section>
 
-            <!-- Skills, Projects, Education sections stay the same as before -->
-            <!-- (keep your existing content here unchanged) -->
+            <!-- Skills Section -->
+            <section id="skills" class="py-24">
+                <div class="w-full">
+                    <h2 class="text-5xl font-bold text-white mb-12 text-center">Technical Skills</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 hover:scale-105 transition-all duration-300 shadow-xl">
+                            <h3 class="text-xl font-bold text-purple-400 mb-4">Frontend</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">React</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">TypeScript</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Next.js</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 hover:scale-105 transition-all duration-300 shadow-xl">
+                            <h3 class="text-xl font-bold text-purple-400 mb-4">Backend</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Node.js</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Python</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Express</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Django</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 hover:scale-105 transition-all duration-300 shadow-xl">
+                            <h3 class="text-xl font-bold text-purple-400 mb-4">Database</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">MongoDB</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Redis</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 hover:scale-105 transition-all duration-300 shadow-xl">
+                            <h3 class="text-xl font-bold text-purple-400 mb-4">DevOps</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Docker</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">AWS</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">CI/CD</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Git</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 hover:scale-105 transition-all duration-300 shadow-xl">
+                            <h3 class="text-xl font-bold text-purple-400 mb-4">Tools</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">VS Code</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Figma</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Postman</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Linux</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 hover:scale-105 transition-all duration-300 shadow-xl">
+                            <h3 class="text-xl font-bold text-purple-400 mb-4">Soft Skills</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Team Leadership</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Problem Solving</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Agile</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Communication</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-24">
+                <div class="w-full">
+                    <h2 class="text-5xl font-bold text-white mb-12 text-center">Featured Projects</h2>
+                    <div class="space-y-8">
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02]">
+                            <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold mb-4">
+                                Project 1
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">E-Commerce Platform</h3>
+                            <p class="text-gray-300 mb-4 leading-relaxed">Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">React</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">Node.js</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">Stripe</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02]">
+                            <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold mb-4">
+                                Project 2
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">AI-Powered Analytics Dashboard</h3>
+                            <p class="text-gray-300 mb-4 leading-relaxed">Data visualization platform with machine learning insights for business intelligence and predictive analytics.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">Python</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">TensorFlow</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">React</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">D3.js</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02]">
+                            <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold mb-4">
+                                Project 3
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Social Media App</h3>
+                            <p class="text-gray-300 mb-4 leading-relaxed">Mobile-first social platform with real-time messaging, media sharing, and personalized content feeds.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">React Native</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">Firebase</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">Redux</span>
+                                <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-lg text-sm border border-slate-600">WebSocket</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="py-24">
+                <div class="w-full">
+                    <h2 class="text-5xl font-bold text-white mb-12 text-center">Education & Certifications</h2>
+                    <div class="space-y-6">
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 shadow-xl">
+                            <div class="flex items-start justify-between flex-wrap gap-4">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2">Master of Science in Computer Science</h3>
+                                    <p class="text-purple-400 font-medium mb-2">University Name</p>
+                                    <p class="text-gray-300">Specialized in Machine Learning and Software Engineering</p>
+                                </div>
+                                <div class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-lg border border-purple-500/30">
+                                    2020 - 2022
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 shadow-xl">
+                            <div class="flex items-start justify-between flex-wrap gap-4">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2">Bachelor of Science in Computer Engineering</h3>
+                                    <p class="text-purple-400 font-medium mb-2">University Name</p>
+                                    <p class="text-gray-300">Graduated with Honors, GPA: 3.8/4.0</p>
+                                </div>
+                                <div class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-lg border border-purple-500/30">
+                                    2016 - 2020
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 shadow-xl">
+                            <div class="flex items-start justify-between flex-wrap gap-4">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2">AWS Certified Solutions Architect</h3>
+                                    <p class="text-purple-400 font-medium mb-2">Amazon Web Services</p>
+                                    <p class="text-gray-300">Professional level cloud architecture certification</p>
+                                </div>
+                                <div class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-lg border border-purple-500/30">
+                                    2023
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </div>
     </div>
@@ -223,3 +375,4 @@ HTML_TEMPLATE = '''
 
 # Render the HTML inside Streamlit
 html(HTML_TEMPLATE, height=2600, scrolling=True)
+
