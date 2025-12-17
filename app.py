@@ -7,6 +7,28 @@ st.set_page_config(
     layout="wide",
 )
 
+# Remove Streamlit's default padding / white frame
+st.markdown(
+    """
+    <style>
+    .main .block-container {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        max-width: 100%;
+    }
+    [data-testid="stAppViewContainer"] {
+        padding: 0;
+    }
+    body {
+        margin: 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 HTML_TEMPLATE = '''
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +94,7 @@ HTML_TEMPLATE = '''
         <div class="max-w-6xl mx-auto space-y-32">
             
             <!-- About Me Section -->
-            <section id="about" class="min-h-screen flex items-center">
+            <section id="about" class="py-24">
                 <div class="w-full">
                     <div class="text-center mb-12 animate-fade-in">
                         <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 p-1 shadow-2xl shadow-purple-500/50">
@@ -120,7 +142,7 @@ HTML_TEMPLATE = '''
             </section>
 
             <!-- Skills Section -->
-            <section id="skills" class="min-h-screen flex items-center">
+            <section id="skills" class="py-24">
                 <div class="w-full">
                     <h2 class="text-5xl font-bold text-white mb-12 text-center">Technical Skills</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -182,7 +204,7 @@ HTML_TEMPLATE = '''
             </section>
 
             <!-- Projects Section -->
-            <section id="projects" class="min-h-screen flex items-center">
+            <section id="projects" class="py-24">
                 <div class="w-full">
                     <h2 class="text-5xl font-bold text-white mb-12 text-center">Featured Projects</h2>
                     <div class="space-y-8">
@@ -230,7 +252,7 @@ HTML_TEMPLATE = '''
             </section>
 
             <!-- Education Section -->
-            <section id="education" class="min-h-screen flex items-center">
+            <section id="education" class="py-24">
                 <div class="w-full">
                     <h2 class="text-5xl font-bold text-white mb-12 text-center">Education & Certifications</h2>
                     <div class="space-y-6">
@@ -344,4 +366,4 @@ HTML_TEMPLATE = '''
 '''
 
 # Render the HTML inside Streamlit
-html(HTML_TEMPLATE, height=2200, scrolling=True)
+html(HTML_TEMPLATE, height=2600, scrolling=True)
