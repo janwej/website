@@ -59,7 +59,7 @@ HTML_TEMPLATE = '''
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
     
     <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-4 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar" class="fixed top-8 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4">
             <div class="flex items-center justify-center gap-2 flex-wrap">
                 <button onclick="scrollToSection('about')" class="nav-btn px-6 py-3 rounded-full transition-all duration-300 bg-gradient-to-r from-purple-500 to-pink-500 text-white scale-110 shadow-lg shadow-purple-500/50">
