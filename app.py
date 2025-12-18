@@ -103,7 +103,7 @@ HTML_TEMPLATE = '''
         <div class="max-w-6xl mx-auto space-y-32">
             
             <!-- About Me Section -->
-            <section id="about" class="py-24">
+            <section id="about" class="py-6">
                 <div class="w-full">
                     <div class="text-center mb-12 animate-fade-in">
                         <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 p-1 shadow-2xl shadow-purple-500/50">
