@@ -152,7 +152,7 @@ HTML_TEMPLATE = '''
             </section>
 
             <!-- Skills Section -->
-            <section id="skills" class="py-12">
+            <section id="skills" class="py-4">
                 <div class="w-full">
                     <h2 class="text-5xl font-bold text-white mb-12 text-center">Technical Skills</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -214,7 +214,7 @@ HTML_TEMPLATE = '''
             </section>
 
             <!-- Projects Section -->
-            <section id="projects" class="py-24">
+            <section id="projects" class="py-4">
                 <div class="w-full">
                     <h2 class="text-5xl font-bold text-white mb-12 text-center">Featured Projects</h2>
                     <div class="space-y-8">
@@ -262,7 +262,7 @@ HTML_TEMPLATE = '''
             </section>
 
             <!-- Education Section -->
-            <section id="education" class="py-24">
+            <section id="education" class="py-4">
                 <div class="w-full">
                     <h2 class="text-5xl font-bold text-white mb-12 text-center">Education & Certifications</h2>
                     <div class="space-y-6">
